@@ -32,6 +32,11 @@ main {
   border-top-left-radius: 0.5rem;
   border-bottom-left-radius: 0.5rem;
   box-shadow: -10px 10px 30px rgba(32, 32, 32, 0.075);
+  transition: all 0.5s;
+}
+
+.drawers-img:hover {
+  width: 380px;
 }
 
 .card {
@@ -59,22 +64,20 @@ main {
 }
 
 .profile {
-  width: 100%;
+  position: absolute;
   height: 55px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
 }
 
-.profile img {
+.profile-img {
   width: 40px;
   height: 40px;
   border-radius: 50%;
 }
 
 .profile-description {
-  position: relative;
-  right: 21%;
+  margin-left: 0.8rem;
 }
 
 .profile-description h4 {
@@ -88,19 +91,21 @@ main {
 }
 
 .share-btn {
+  margin-left: 11rem;
   padding: 0;
   width: 40px;
   height: 40px;
   border: none;
   background-color: var(--Light-Grayish-Blue);
   border-radius: 50%;
+  transition: all 0.4s;
 }
 
 .share-btn svg {
   width: 17px;
   height: 17px;
   padding: 11px;
-  fill: #6E8098;
+  fill: #6e8098;
   border-radius: 50%;
 }
 
@@ -113,3 +118,104 @@ main {
   fill: white;
 }
 
+.share_card {
+  display: none;
+}
+
+.share-card {
+  position: absolute;
+  left: 63.5%;
+  bottom: 124%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.9rem;
+  width: 240px;
+  height: 50px;
+  background-color: var(--Very-Dark-Grayish-Blue);
+  color: var(--Grayish-Blue);
+  border-radius: 0.6rem;
+  letter-spacing: 0.3rem;
+  animation: fadeIn 0.8s;
+}
+
+@keyframes fadeIn {
+  0% {
+    height: 45px;
+    opacity: 0;
+  }
+  100% {
+    height: 50px;
+    opacity: 1;
+  }
+}
+
+.share-card:after {
+  content: "";
+  position: absolute;
+  bottom: -9px;
+  left: 50%;
+  margin-left: -9px;
+  width: 18px;
+  height: 18px;
+  background: var(--Very-Dark-Grayish-Blue);
+  transform: rotate(45deg);
+}
+
+.share-card img {
+  width: 20px;
+  height: 20px;
+}
+
+@media (max-width: 740px) {
+  main {
+    margin: 1.5rem 0;
+    height: auto;
+    flex-direction: column;
+  }
+
+  .drawers-img {
+    width: 380px;
+    max-width: 100%;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 0.5rem;
+  }
+
+  .card {
+    max-width: 380px;
+    height: 340px;
+    padding: 1.5rem 2rem;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 0.5rem;
+  }
+
+  .card h2 {
+    max-width: 100%;
+    font-size: 1.2rem;
+  }
+
+  .description {
+    font-size: 0.85rem;
+    line-height: 1.3rem;
+    max-width: 95%;
+  }
+
+  .profile {
+    height: 70px;
+  }
+
+  .profile-img {
+    width: 38px;
+    height: 38px;
+  }
+
+  .profile-description {
+    position: relative;
+    right: 10%;
+  }
+
+  .profile-description h4 {
+    height: 3px;
+    letter-spacing: 0.1mm;
+  }
+}
