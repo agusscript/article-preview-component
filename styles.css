@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap"); /*500,700*/
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap");
 
 :root {
   --Very-Dark-Grayish-Blue: hsl(217, 19%, 35%);
@@ -175,15 +175,20 @@ main {
   }
 
   .drawers-img {
-    width: 380px;
+    width: 360px;
     max-width: 100%;
     border-bottom-left-radius: 0;
     border-top-right-radius: 0.5rem;
   }
 
+  .drawers-img:hover {
+    height: 320px;
+    width: 360px;
+  }
+
   .card {
-    max-width: 380px;
-    height: 340px;
+    max-width: 360px;
+    height: 324px;
     padding: 1.5rem 2rem;
     border-top-right-radius: 0;
     border-bottom-left-radius: 0.5rem;
@@ -191,13 +196,14 @@ main {
 
   .card h2 {
     max-width: 100%;
-    font-size: 1.2rem;
+    font-size: 1.15rem;
   }
 
   .description {
     font-size: 0.85rem;
     line-height: 1.3rem;
     max-width: 95%;
+    letter-spacing: 0.3px;
   }
 
   .profile {
@@ -211,11 +217,96 @@ main {
 
   .profile-description {
     position: relative;
-    right: 10%;
+    right: 0;
   }
 
   .profile-description h4 {
     height: 3px;
     letter-spacing: 0.1mm;
+  }
+
+  .share-btn {
+    margin-left: 5rem;
+    margin-top: 0.5rem;
+    z-index: 1;
+  }
+
+  .share-card {
+    width: 100%;
+    left: -32px;
+    bottom: -4.8px;
+    justify-content: flex-start;
+    gap: 1.4rem;
+    width: 360px;
+    height: 72px;
+    animation: fadeIn 0.8s;
+  }
+
+  .share-card p {
+    margin-left: 2rem;
+  }
+
+  @keyframes fadeIn {
+    0% {
+      height: 45px;
+      opacity: 0;
+    }
+    100% {
+      height: 70px;
+      opacity: 1;
+    }
+  }
+
+  .share-card:after {
+    display: none;
+  }
+}
+
+@media (max-width: 380px) {
+  .drawers-img {
+    width: 340px;
+    max-width: 100%;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 0.5rem;
+  }
+
+  .drawers-img:hover {
+    height: 320px;
+    width: 340px;
+  }
+
+  .card {
+    max-width: 340px;
+    padding: 1rem 1.5rem;
+  }
+
+  .card h2 {
+    max-width: 100%;
+    font-size: 1.1rem;
+  }
+
+  .description {
+    font-size: 0.8rem;
+    line-height: 1.2rem;
+    max-width: 100%;
+  }
+
+  .profile {
+    height: 70px;
+  }
+
+  .profile-description h4 {
+    font-size: 0.75rem;
+    height: 0px;
+    letter-spacing: 0;
+  }
+
+  .profile-description p {
+    font-size: 0.7rem;
+  }
+
+  .share-card {
+    width: 340px;
+    animation: fadeIn 0.8s;
   }
 }
